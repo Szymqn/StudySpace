@@ -1,0 +1,174 @@
+/*constant elements*/
+
+header {
+    position: sticky;
+    top: 0;
+    padding: 100px 80px;
+    background: #D3ECA7;
+}
+
+header .log_bar {
+    float: right;
+    position: relative;
+    top: -90px;
+    right: -70px;
+}
+
+header h1 {
+    text-align: center;
+    margin: -10px;
+}
+
+header img[alt*="logo"] {
+    float: left;
+    width: 120px;
+}
+
+body {
+    margin: 0;
+    background: #FFEEAD;
+    font-family: "Monaco", monospace;
+}
+
+nav {
+    text-align: center;
+}
+
+menu li {
+    display: inline-block;
+    width: 10%;
+    border-style: solid;
+    text-align: center;
+    background-color: #D3ECA7;
+    color: black;
+    padding: 12px 24px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+menu li:hover {
+    background-color: #ffe28a;
+}
+
+a {
+    text-decoration: inherit;
+    color: black;
+}
+
+#clock {
+    float: right;
+    position: relative;
+    top: 40px;
+    right: -200px;
+}
+
+/*home*/
+.home_page {
+    margin-left: 50px;
+}
+
+/*login*/
+.log_content {
+    margin-left: 50px;
+}
+
+.login {
+    margin-left: 50px;
+}
+
+/*register*/
+.reg_content {
+    margin-left: 50px;
+}
+
+.register {
+    margin-left: 50px;
+}
+
+/*topics*/
+.topic_h {
+    margin-left: 50px;
+}
+
+.topics {
+    margin-left: 50px;
+}
+
+.add_topic {
+    margin-left: 50px;
+}
+
+/*add topic*/
+.add_topic_h {
+    margin-left: 50px;
+}
+
+.topic_create {
+    margin-left: 50px;
+}
+
+.save_topic {
+    margin-left: 50px;
+}
+
+/*projects*/
+.project_h {
+    margin-left: 50px;
+}
+
+.projects {
+    margin-left: 50px;
+}
+
+img[alt*="githubLink"] {
+    width: 15px;
+    height: 15px;
+}
+
+.add_project {
+    margin-left: 50px;
+}
+
+/*add project*/
+.add_project_h {
+    margin-left: 50px;
+}
+
+.project_create {
+    margin-left: 50px;
+}
+
+.save_project {
+    margin-left: 50px;
+}
+
+/*leaderboard*/
+.leaderboard {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 50px;
+}
+
+.leaderboard tr {
+    padding: 20px;
+    font-size: 30px;
+}
+
+.leaderboard td {
+    padding: 20px;
+    font-size: 25px;
+}
+
+/*about us*/
+.faq {
+    margin-left: 50px;
+}
+
+/*account*/
+.account_h {
+    margin-left: 50px;
+}
+
+.account_details {
+    margin-left: 50px;
+}

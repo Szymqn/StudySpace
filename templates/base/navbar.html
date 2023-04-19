@@ -1,0 +1,31 @@
+{% load static %}
+
+<header>
+    <section class="log_bar">
+        {% if request.user.is_authenticated %}
+            <p>User: {{ request.user }}</p>
+            <a href="{% url 'account' %}">Details</a>
+            <a href="{% url 'logout' %}">Logout</a>
+        {% else %}
+            <a href="{% url 'login' %}">Login</a>
+            <a href="{% url 'register' %}">Register</a>
+        {% endif %}
+    </section>
+
+    <img src="{% static 'images/computer.png' %}" alt="logo">
+    <h1>Study Space - Code with us!</h1>
+
+    {% block contect %}
+        {% include "base/clock.html" %}
+    {% endblock %}
+</header>
+
+<nav>
+    <menu>
+        <li><a href="{% url 'home' %}">Home</a></li>
+        <li><a href="{% url 'topics' %}">Topics</a></li>
+        <li><a href="{% url 'projects' %}">Projects</a></li>
+        <li><a href="{% url 'leaderboard' %}">Leaderboard</a></li>
+        <li><a href="{% url 'aboutUs' %}">About us</a></li>
+    </menu>
+</nav>

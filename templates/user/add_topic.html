@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>StudySpace</title>
+    <link rel="stylesheet" href="/static/styles/style.css"{% now "U" %} />
+</head>
+<body>
+
+{% include 'base/navbar.html' %}
+
+<h2 class="add_topic_h">Add new Topic</h2>
+
+{#Place for HTML form generate from backend#}
+{#Temp for frontend, static for preview:#}
+<article class="topic_create">
+    <h3>Title: Enter title of topic</h3>
+    <h3>Author: Your username</h3>
+    <h3>Content: Place for content in topic</h3>
+    <h3>Source: Place for source</h3>
+</article>
+
+<menu class="save_topic">
+    <li><a href="{% url 'topics' %}">Save</a></li>
+</menu>
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>StudySpace</title>
+    <link rel="stylesheet" href="/static/styles/style.css"{% now "U" %} />
+</head>
+<body>
+
+{% include 'base/navbar.html' %}
+
+<h2 class="topic_h">Latest topics</h2>
+
+<ol class="topics">
+    <li>
+        Topic: What's new in Python?<br>
+        View more (back end)
+    </li>
+    <li>
+        Topic: Why Django is the best?
+    </li>
+    <li>
+        Topic: Why you should use REST API?
+    </li>
+    <li>
+        Topic: What's MongoDB?
+    </li>
+</ol>
+
+{% if request.user.is_authenticated %}
+    <menu class="add_topic">
+        <li><a href="{% url 'addTopic' %}">Add topic</a></li>
+    </menu>
+{% endif %}
+
+</body>
+</html>

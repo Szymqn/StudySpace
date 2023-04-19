@@ -5,11 +5,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8bd205ba-140e-4d42-89c6-1b2a409baf65" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/computer.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/githubIcon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/main.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/styles/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/base/about_us.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/base/clock.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/base/home.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/base/leaderboard.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/base/navbar.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/base/projects.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/base/topics.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/user/account.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/user/add_project.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/user/add_topic.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/user/login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/user/register.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../pong/.idea/pong.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/StudySpace/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/StudySpace/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,6 +39,14 @@
   </component>
   <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
     <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+        <option value="HTML File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -33,10 +62,12 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ASKED_ADD_EXTERNAL_FILES": "true",
+    "DefaultHtmlFileTemplate": "HTML File",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "develop",
+    "last_opened_file_path": "/home/szymon/PycharmProjects/StudySpace/static/images",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -103,6 +134,7 @@
       <option name="presentableId" value="Default" />
       <updated>1681920499975</updated>
       <workItem from="1681920511363" duration="2017000" />
+      <workItem from="1681922548217" duration="618000" />
     </task>
     <servers />
   </component>

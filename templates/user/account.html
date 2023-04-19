@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>StudySpace</title>
+    <link rel="stylesheet" href="/static/styles/style.css"{% now "U" %} />
+</head>
+<body>
+
+{% include 'base/navbar.html' %}
+
+<h2 class="account_h">Account Details</h2>
+
+{#Place for HTML form generate from backend#}
+{#Temp for frontend, static for preview:#}
+<article class="account_details">
+    <h3>Name: Szymon</h3>
+    <h3>Surname: Kołodziejski</h3>
+    <h3>Username: Szymqn</h3>
+    <h3>Age: 20</h3>
+    <h3>Category: Python Developer</h3>
+    <h3>Github: <a href="https://github.com/Szymqn"><img src="{% static 'images/githubIcon.png' %}" alt="githubLink"></a></h3>
+</article>
+
+</body>
+</html>

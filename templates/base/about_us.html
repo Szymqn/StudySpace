@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>StudySpace</title>
+    <link rel="stylesheet" href="/static/styles/style.css"{% now "U" %} />
+</head>
+<body>
+
+{% include 'base/navbar.html' %}
+
+<main>
+    <article class="faq">
+        <h2>FAQ for new users</h2>
+        <h3>Why us?</h3>
+        <p>We create a new high-tech forum with cool retro vibe.</p>
+        <h3>What's topics?</h3>
+        <p>Topic section will help you find interesting stuff in current category.</p>
+        <h3>What's Projects</h3>
+        <p>In projects section you can find top projects from our community.</p>
+        <h3>What's leaderboard?</h3>
+        <p>Leaderboard is new feature which allow our user to lead a little bit competition</p>
+        <p>In the future, we make awards for the top of us.</p>
+    </article>
+</main>
+
+</body>
+</html>
