@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 import os
 from pathlib import Path
 from dotenv import load_dotenv
+from pymongo import MongoClient
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -75,12 +76,18 @@ WSGI_APPLICATION = 'StudySpace.wsgi.application'
 
 
 # Database
-# https://docs.djangoproject.com/en/4.2/ref/settings/#databases
+passwd = os.getenv('MONGODB_PWD')
+
+connection_string = f'mongodb+srv://admin:{passwd}@cluster0.f5qfsng.mongodb.net/?retryWrites=true&w=majority'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'djongo',
+        'CLIENT': {
+            'host': connection_string,
+            'name': 'StudySpace',
+            'authMechanism': 'SCRAM-SHA-1'
+        }
     }
 }
 
