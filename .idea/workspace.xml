@@ -5,30 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8bd205ba-140e-4d42-89c6-1b2a409baf65" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/base/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/base/admin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/base/apps.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/base/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/base/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/base/tests.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/base/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/base/views.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/computer.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/githubIcon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/js/main.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/styles/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/base/about_us.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/base/clock.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/base/home.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/base/leaderboard.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/base/navbar.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/base/projects.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/base/topics.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/user/account.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/user/add_project.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/user/add_topic.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/user/login.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/user/register.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../StudySpaceT" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../pong/.idea/pong.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
@@ -59,24 +36,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "develop",
-    "last_opened_file_path": "/home/szymon/PycharmProjects/StudySpace/static/images",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;develop&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/szymon/PycharmProjects/StudySpaceT&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration default="true" type="PythonConfigurationType" factoryName="Python" singleton="false">
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -135,6 +112,8 @@
       <updated>1681920499975</updated>
       <workItem from="1681920511363" duration="2017000" />
       <workItem from="1681922548217" duration="618000" />
+      <workItem from="1681941417244" duration="517000" />
+      <workItem from="1681942904867" duration="127000" />
     </task>
     <servers />
   </component>
