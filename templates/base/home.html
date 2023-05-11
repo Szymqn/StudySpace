@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>StudySpace</title>
+    <link rel="stylesheet" href="/static/styles/style.css"{% now "U" %} />
+</head>
+<body>
+
+{% include 'base/navbar.html' %}
+
+<article class="home_page">
+    <h2>Welcome in Study Space</h2>
+    <p>Check us platform and explore new features</p>
+    <p>In our platform you can</p>
+    <ul>
+        <li>Get knowledge in many topics</li>
+        <li>Solve your code trouble</li>
+    </ul>
+    <p>And the best one: We offer them for free!</p>
+</article>
+
+</body>
+</html>

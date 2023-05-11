@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>StudySpace</title>
+    <link rel="stylesheet" href="/static/styles/style.css"{% now "U" %} />
+</head>
+<body>
+
+{% include 'base/navbar.html' %}
+
+<h2 class="project_h">Top projects from our community</h2>
+
+<ol class="projects">
+    <li>
+        Project: Space Invaders<br>
+        Author: Szymqn<br>
+        Source Code: <a href="https://github.com/Szymqn/SpaceInvaders"><img src="{% static 'images/githubIcon.png' %}" alt="githubLink"></a>
+    </li>
+    <li>
+        Project: Petanque<br>
+        Author: Tech Innovators Inc.<br>
+        Source Code: <a href="https://github.com/UwB-Tech-Innovators-Inc/Petanque"><img src="{% static 'images/githubIcon.png' %}" alt="githubLink"></a>
+    </li>
+</ol>
+
+{% if request.user.is_authenticated %}
+    <menu class="save_project">
+        <li><a href="{% url 'addProject' %}">Add project</a></li>
+    </menu>
+{% endif %}
+
+</body>
+</html>
