@@ -7,7 +7,6 @@
     <list default="true" id="8bd205ba-140e-4d42-89c6-1b2a409baf65" name="Changes" comment="">
       <change afterPath="$PROJECT_DIR$/../StudySpaceT" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../pong/.idea/pong.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -116,6 +115,7 @@
       <workItem from="1681942904867" duration="127000" />
       <workItem from="1683805341994" duration="13000" />
       <workItem from="1683805860940" duration="8000" />
+      <workItem from="1683805941321" duration="338000" />
     </task>
     <servers />
   </component>
