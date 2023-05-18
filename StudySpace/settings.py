@@ -84,16 +84,13 @@ WSGI_APPLICATION = 'StudySpace.wsgi.application'
 
 
 # Database
-passwd = os.getenv('MONGODB_PWD')
-
-connection_string = f'mongodb+srv://admin:{passwd}@cluster0.f5qfsng.mongodb.net/?retryWrites=true&w=majority'
-
 DATABASES = {
     'default': {
         'ENGINE': 'djongo',
         'CLIENT': {
-            'host': connection_string,
-            'name': 'StudySpace',
+            'host': "mongodb+srv://{}:{}@{}/?retryWrites=true&w=majority".format(
+                os.getenv('MONGODB_USER'), os.getenv('MONGODB_PASSWORD'), os.getenv('MONGODB_CLUSTER')),
+            'name': os.getenv('MONGODB_NAME'),
             'authMechanism': 'SCRAM-SHA-1'
         }
     }
