@@ -12,10 +12,10 @@
 
 <h2 class="log_content">Login</h2>
 
-<form method="POST" class="login">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit" value="Login">
+<form method="post" class="login">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit">Login</button>
 </form>
 
 <p class="log_content">Don't have an account? <a href="{% url 'register' %}">Register</a></p>
