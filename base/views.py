@@ -28,40 +28,9 @@ def topics(request):
     return render(request, 'base/topics.html')
 
 
-def account(request):
-    return render(request, 'user/account.html')
-
-
 def addTopic(request):
     return render(request, 'user/add_topic.html')
 
 
 def addProject(reqeust):
     return render(reqeust, 'user/add_project.html')
-
-
-class CustomLogin(LoginView):
-    template_name = 'user/login.html'
-    fields = '__all__'
-    redirect_authenticated_user = True
-
-    def get_succesful_url(self):
-        return redirect('home')
-
-
-class RegisterPage(FormView):
-    template_name = 'user/register.html'
-    form_class = UserCreationForm
-    redirect_authenticated_user = True
-    success_url = reverse_lazy('home')
-
-    def form_valid(self, form):
-        user = form.save()
-        if user is not None:
-            login(self.request, user)
-        return super(RegisterPage, self).form_valid(form)
-
-    def get(self, *args, **kwargs):
-        if self.request.user.is_authenticated:
-            return redirect('home')
-        return super(RegisterPage, self).get(*args, **kwargs)
