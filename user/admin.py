@@ -1,26 +1,23 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
-from .forms import UserCreationForm
+
 from .models import User
 
 
-class CustomUserAdmin(UserAdmin):
-    add_form = UserCreationForm
-
-    list_display = ('email', 'is_admin')
-    list_filter = ('is_admin',)
-    fieldsets = (
-        (None, {'fields': ('email', 'password')}),
-        ('Permissions', {'fields': ('is_admin',)}),
-    )
-    add_fieldsets = (
-        (None, {
-            'classes': ('wide',),
-            'fields': ('email', 'password1', 'password2'),
-        }),
-    )
-    ordering = ('email',)
-    filter_horizontal = ()
-
-
-admin.site.register(User, CustomUserAdmin)
+@admin.register(User)
+class MyUserAdmin(UserAdmin):
+    model = User
+    # list_display = ('email', )
+    # list_filter = ('email', )
+    # search_fields = ('email',)
+    # ordering = ('email',)
+    # filter_horizontal = ()
+    # # fieldsets = UserAdmin.fieldsets + (
+    # #     (None, {'fields': ('email',)}),
+    # # )
+    # # add_fieldsets = (
+    # #     (None, {
+    # #         'classes': ('wide',),
+    # #         'fields': ('email', 'password1', 'password2'),
+    # #     }),
+    # # )

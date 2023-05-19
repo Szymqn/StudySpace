@@ -1,29 +1,26 @@
-from django.conf import settings
+from django.contrib.auth.models import AbstractUser
 from django.db import models
-from django.contrib.auth.models import AbstractBaseUser
-from .manager import MyUserManager
+from django.utils import timezone
+from .managers import UserCustomManager
 
 
-class User(AbstractBaseUser):
-    email = models.EmailField(max_length=255,unique=True,)
-    is_active = models.BooleanField(default=True)
-    is_staff = models.BooleanField(default=False)
+class User(AbstractUser):
+    email = models.EmailField(unique=True)
+    is_superuser = models.BooleanField(default=False)
     is_admin = models.BooleanField(default=False)
-
-    objects = MyUserManager()
+    is_active = models.BooleanField(default=True)
+    phone_number = models.IntegerField(unique=True)
+    is_owner = models.BooleanField(default=False)
+    is_advisor = models.BooleanField(default=False)
+    name = models.CharField(max_length=40)
+    data_join = models.DateTimeField(default=timezone.now)
+    code_agency = models.IntegerField(null=True, blank=True, default=0)
 
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = []
 
-    def __str__(self):
-        return self.email
+    objects = UserCustomManager()
 
-    def has_perm(self, perm, obj=None):
-        return True
-
-    def has_module_perms(self, app_label):
-        return True
-
-    @property
-    def is_staff(self):
-        return self.is_admin
+    class Meta:
+        verbose_name = 'user'
+        verbose_name_plural = 'users'
