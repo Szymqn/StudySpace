@@ -6,8 +6,8 @@ from django.contrib.auth.forms import UserCreationForm
 from django.views.generic.edit import FormView
 
 from user.models import CustomUser
-from .models import Project
-from .forms import ProjectForm
+from .models import Project, Topic
+from .forms import ProjectForm, TopicForm
 
 # Create your views here.
 
@@ -32,7 +32,23 @@ def projects(request):
 
 
 def topics(request):
-    return render(request, 'base/topics.html')
+    topics_query = Topic.objects.all()
+    context = {'topics': topics_query}
+    return render(request, 'base/topics.html', context)
+
+
+def create_topic(request):
+    if request.method == 'POST':
+        form = TopicForm(request.POST)
+        if form.is_valid():
+            project = form.save(commit=False)
+            project.author = request.user
+            form.save()
+            return redirect('topics')
+    else:
+        form = TopicForm()
+
+    return render(request, 'base/create_topic.html', {'form': form})
 
 
 def addTopic(request):
