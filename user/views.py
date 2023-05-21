@@ -4,11 +4,14 @@ from django.contrib.auth.views import LoginView
 from django.views.generic import FormView, CreateView
 from django.urls import reverse_lazy
 
+from .models import CustomUser
 from .forms import CustomUserCreationForm
 
 
-def account(request):
-    return render(request, 'user/account.html')
+def account_details(request):
+    user = CustomUser.objects.get(username=request.user)
+    context = {'user': user}
+    return render(request, 'user/account.html', context)
 
 
 class LoginView(LoginView):

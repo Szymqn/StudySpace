@@ -12,16 +12,15 @@
 
 <h2 class="account_h">Account Details</h2>
 
-{#Place for HTML form generate from backend#}
-{#Temp for frontend, static for preview:#}
 <article class="account_details">
-    <h3>Name: Szymon</h3>
-    <h3>Surname: Kołodziejski</h3>
-    <h3>Username: Szymqn</h3>
-    <h3>Age: 20</h3>
-    <h3>Category: Python Developer</h3>
-    <h3>Github: <a href="https://github.com/Szymqn"><img src="{% static 'images/githubIcon.png' %}" alt="githubLink"></a></h3>
+    <h3>First name: {{ user.first_name }}</h3>
+    <h3>Last name: {{ user.last_name }}</h3>
+    <h3>Username: {{ user.username }}</h3>
+    <h3>Age: {{ user.age }}</h3>
+    <h3>Category: {{ user.category }}</h3>
+    <h3>Github: <a href="{{ user.github }}"><img src="{% static 'images/githubIcon.png' %}" alt="githubLink"></a></h3>
 </article>
+
 
 </body>
 </html>
