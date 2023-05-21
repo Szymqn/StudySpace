@@ -13,19 +13,13 @@
 <h2 class="topic_h">Latest topics</h2>
 
 <ol class="topics">
-    <li>
-        Topic: What's new in Python?<br>
-        View more (back end)
-    </li>
-    <li>
-        Topic: Why Django is the best?
-    </li>
-    <li>
-        Topic: Why you should use REST API?
-    </li>
-    <li>
-        Topic: What's MongoDB?
-    </li>
+    {% for topic in topics %}
+        <li>
+            Topic: {{ topic.name }}<br>
+            Author: {{ topic.author }}<br>
+            Content: {{ topic.content }}<br>
+        </li>
+    {% endfor %}
 </ol>
 
 {% if request.user.is_authenticated %}

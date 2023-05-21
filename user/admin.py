@@ -1,26 +1,36 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
-from .forms import UserCreationForm
-from .models import User
+
+from .forms import CustomUserCreationForm, CustomUserChangeForm
+from .models import CustomUser
 
 
 class CustomUserAdmin(UserAdmin):
-    add_form = UserCreationForm
+    add_form = CustomUserCreationForm
+    form = CustomUserChangeForm
+    model = CustomUser
+    list_display = ["username", "email", ]
 
-    list_display = ('email', 'is_admin')
-    list_filter = ('is_admin',)
     fieldsets = (
-        (None, {'fields': ('email', 'password')}),
-        ('Permissions', {'fields': ('is_admin',)}),
-    )
-    add_fieldsets = (
         (None, {
-            'classes': ('wide',),
-            'fields': ('email', 'password1', 'password2'),
+            'fields': ('username', 'password')
         }),
+        ('Personal info', {
+            'fields': ('first_name', 'last_name', 'email')
+        }),
+        ('Permissions', {
+            'fields': (
+                'is_active', 'is_staff', 'is_superuser',
+                'groups', 'user_permissions'
+            )
+        }),
+        ('Important dates', {
+            'fields': ('last_login', 'date_joined')
+        }),
+        ('Additional info', {
+            'fields': ('age', 'category', 'github', 'score')
+        })
     )
-    ordering = ('email',)
-    filter_horizontal = ()
 
 
-admin.site.register(User, CustomUserAdmin)
+admin.site.register(CustomUser, CustomUserAdmin)

@@ -140,7 +140,7 @@ STATICFILES_DIRS = [
 ]
 
 # User AUTH
-AUTH_USER_MODEL = 'user.User'
+AUTH_USER_MODEL = 'user.CustomUser'
 
 LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = 'home'

@@ -12,13 +12,15 @@
 
 <h2 class="log_content">Login</h2>
 
+{% block content %}
 <form method="post" class="login">
   {% csrf_token %}
   {{ form.as_p }}
   <button type="submit">Login</button>
 </form>
+{% endblock %}
 
-<p class="log_content">Don't have an account? <a href="{% url 'register' %}">Register</a></p>
+<p class="log_content">Don't have an account? <a href="{% url 'signup' %}">Sign Up</a></p>
 
 </body>
 </html>
