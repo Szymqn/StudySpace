@@ -13,16 +13,13 @@
 <h2 class="project_h">Top projects from our community</h2>
 
 <ol class="projects">
-    <li>
-        Project: Space Invaders<br>
-        Author: Szymqn<br>
-        Source Code: <a href="https://github.com/Szymqn/SpaceInvaders"><img src="{% static 'images/githubIcon.png' %}" alt="githubLink"></a>
-    </li>
-    <li>
-        Project: Petanque<br>
-        Author: Tech Innovators Inc.<br>
-        Source Code: <a href="https://github.com/UwB-Tech-Innovators-Inc/Petanque"><img src="{% static 'images/githubIcon.png' %}" alt="githubLink"></a>
-    </li>
+    {% for project in projects %}
+        <li>
+            Project: {{ project.name }}<br>
+            Author: {{ project.author }}<br>
+            Source Code: {{ project.source_code }}<br>
+        </li>
+    {% endfor %}
 </ol>
 
 {% if request.user.is_authenticated %}

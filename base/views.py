@@ -6,8 +6,11 @@ from django.contrib.auth.forms import UserCreationForm
 from django.views.generic.edit import FormView
 
 from user.models import CustomUser
+from .models import Project
+from .forms import ProjectForm
 
 # Create your views here.
+
 
 def home(request):
     return render(request, 'base/home.html')
@@ -23,7 +26,9 @@ def leaderboard(request):
 
 
 def projects(request):
-    return render(request, 'base/projects.html')
+    projects_query = Project.objects.all()
+    context = {'projects': projects_query}
+    return render(request, 'base/projects.html', context)
 
 
 def topics(request):
@@ -34,5 +39,15 @@ def addTopic(request):
     return render(request, 'user/add_topic.html')
 
 
-def addProject(reqeust):
-    return render(reqeust, 'user/add_project.html')
+def create_project(request):
+    if request.method == 'POST':
+        form = ProjectForm(request.POST)
+        if form.is_valid():
+            project = form.save(commit=False)
+            project.author = request.user
+            form.save()
+            return redirect('projects')
+    else:
+        form = ProjectForm()
+
+    return render(request, 'base/create_project.html', {'form': form})

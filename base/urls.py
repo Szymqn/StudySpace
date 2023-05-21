@@ -12,5 +12,5 @@ urlpatterns = [
     path('topics/', views.topics, name='topics'),
 
     path('add-topic/', login_required(views.addTopic), name='addTopic'),
-    path('add-project/', login_required(views.addProject), name='addProject'),
+    path('add-project/', login_required(views.create_project), name='addProject'),
 ]

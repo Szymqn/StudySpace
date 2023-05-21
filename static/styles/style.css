@@ -173,3 +173,8 @@ img[alt*="githubLink"] {
 .account_details {
     margin-left: 50px;
 }
+
+/*default form setup*/
+.form {
+    margin-left: 50px;
+}
