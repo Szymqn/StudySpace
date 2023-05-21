@@ -6,6 +6,7 @@ class CustomUser(AbstractUser):
     age = models.IntegerField()
     category = models.CharField(max_length=30)
     github = models.URLField()
+    score = models.IntegerField()
 
     def __str__(self):
         return self.username
