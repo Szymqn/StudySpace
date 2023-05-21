@@ -9,12 +9,9 @@ class User(AbstractUser):
     is_superuser = models.BooleanField(default=False)
     is_admin = models.BooleanField(default=False)
     is_active = models.BooleanField(default=True)
-    phone_number = models.IntegerField(unique=True)
     is_owner = models.BooleanField(default=False)
     is_advisor = models.BooleanField(default=False)
-    name = models.CharField(max_length=30)
     data_join = models.DateTimeField(default=timezone.now)
-    code_agency = models.IntegerField(null=True, blank=True, default=0)
 
     USERNAME_FIELD = 'username'
     REQUIRED_FIELDS = []
