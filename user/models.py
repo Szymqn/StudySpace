@@ -13,6 +13,10 @@ class User(AbstractUser):
     is_advisor = models.BooleanField(default=False)
     data_join = models.DateTimeField(default=timezone.now)
 
+    age = models.IntegerField()
+    category = models.CharField(max_length=30)
+    github = models.URLField()
+
     USERNAME_FIELD = 'username'
     REQUIRED_FIELDS = []
 
