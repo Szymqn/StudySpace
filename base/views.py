@@ -1,9 +1,9 @@
-from django.shortcuts import render, redirect, get_object_or_404
+from django.shortcuts import render, redirect, get_object_or_404, HttpResponseRedirect
 from django.urls import reverse_lazy
 from django.contrib.auth import login
 from django.contrib.auth.views import LoginView
 from django.contrib.auth.forms import UserCreationForm
-from django.views.generic.edit import FormView
+from django.views.generic.edit import FormView, DeleteView
 
 from user.models import CustomUser
 from .models import Project, Topic
@@ -48,11 +48,31 @@ def create_topic(request):
     else:
         form = TopicForm()
 
-    return render(request, 'base/create_topic.html', {'form': form})
+    return render(request, 'base/topic_create.html', {'form': form})
 
 
-def addTopic(request):
-    return render(request, 'user/add_topic.html')
+class TopicDelete(DeleteView):
+    model = Topic
+    context_object_name = 'topic'
+    success_url = reverse_lazy('topics')
+
+    def form_valid(self, form):
+        return super(TopicDelete, self).form_valid(form)
+
+
+def edit_topic(request, id):
+    post = get_object_or_404(Topic, id=id)
+
+    if request.method == 'GET':
+        context = {'form': TopicForm(instance=post), 'id': id}
+        return render(request, 'base/topic_edit.html', context)
+    elif request.method == 'POST':
+        form = TopicForm(request.POST, instance=post)
+        if form.is_valid():
+            form.save()
+            return redirect('topics')
+        else:
+            return render(request, 'base/topic_edit.html', {'form': form})
 
 
 def create_project(request):
@@ -66,4 +86,28 @@ def create_project(request):
     else:
         form = ProjectForm()
 
-    return render(request, 'base/create_project.html', {'form': form})
+    return render(request, 'base/project_create.html', {'form': form})
+
+
+class ProjectDelete(DeleteView):
+    model = Project
+    context_object_name = 'project'
+    success_url = reverse_lazy('projects')
+
+    def form_valid(self, form):
+        return super(ProjectDelete, self).form_valid(form)
+
+
+def edit_project(request, id):
+    post = get_object_or_404(Project, id=id)
+
+    if request.method == 'GET':
+        context = {'form': ProjectForm(instance=post), 'id': id}
+        return render(request, 'base/project_edit.html', context)
+    elif request.method == 'POST':
+        form = ProjectForm(request.POST, instance=post)
+        if form.is_valid():
+            form.save()
+            return redirect('projects')
+        else:
+            return render(request, 'base/project_edit.html', {'form': form})

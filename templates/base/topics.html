@@ -17,7 +17,11 @@
         <li>
             Topic: {{ topic.name }}<br>
             Author: {{ topic.author }}<br>
-            Content: {{ topic.content }}<br>
+            Content: {{ topic.content }}<br><br>
+            {% if request.user.is_authenticated and request.user == topic.author %}
+                    <a href="{% url 'deleteTopic' topic.id %}" class="custom_button">Delete</a>
+                    <a href="{% url 'editTopic' topic.id %}" class="custom_button">Edit</a><br><br>
+            {% endif %}
         </li>
     {% endfor %}
 </ol>
