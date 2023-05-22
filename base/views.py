@@ -48,7 +48,7 @@ def create_topic(request):
     else:
         form = TopicForm()
 
-    return render(request, 'base/create_topic.html', {'form': form})
+    return render(request, 'base/topic_create.html', {'form': form})
 
 
 class TopicDelete(DeleteView):
@@ -58,6 +58,21 @@ class TopicDelete(DeleteView):
 
     def form_valid(self, form):
         return super(TopicDelete, self).form_valid(form)
+
+
+def edit_topic(request, id):
+    post = get_object_or_404(Topic, id=id)
+
+    if request.method == 'GET':
+        context = {'form': TopicForm(instance=post), 'id': id}
+        return render(request, 'base/topic_edit.html', context)
+    elif request.method == 'POST':
+        form = TopicForm(request.POST, instance=post)
+        if form.is_valid():
+            form.save()
+            return redirect('topics')
+        else:
+            return render(request, 'base/topic_edit.html', {'form': form})
 
 
 def create_project(request):

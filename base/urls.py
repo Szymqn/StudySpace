@@ -11,7 +11,8 @@ urlpatterns = [
 
     path('topics/', views.topics, name='topics'),
     path('add-topic/', login_required(views.create_topic), name='addTopic'),
-    path('topic/delete/<int:pk>', views.TopicDelete.as_view(), name='deleteTopic'),
+    path('topic/delete/<int:pk>', login_required(views.TopicDelete.as_view()), name='deleteTopic'),
+    path('topic/edit/<int:id>', login_required(views.edit_topic), name='editTopic'),
 
     path('projects/', views.projects, name='projects'),
     path('add-project/', login_required(views.create_project), name='addProject'),
