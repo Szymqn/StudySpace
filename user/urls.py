@@ -12,4 +12,5 @@ urlpatterns = [
     path('account/', login_required(views.account_details), name='account'),
 
     path('account/delete/<int:pk>', login_required(views.AccountDelete.as_view()), name='deleteAccount'),
+    path('account/edit/<int:id>', login_required(views.edit_account), name='editAccount'),
 ]
