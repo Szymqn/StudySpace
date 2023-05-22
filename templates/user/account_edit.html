@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>StudySpace</title>
+    <link rel="stylesheet" href="/static/styles/style.css"{% now "U" %} />
+</head>
+<body>
+
+{% include 'base/navbar.html' %}
+
+{% block content %}
+<section class="form">
+    <h2>{% if id %} Edit {% else %} New {% endif %} Account </h2>
+    <form method="post" novalidate>
+	    {% csrf_token %}
+    	{{ form.as_p }}
+	    <input type="submit" value="Save" />
+    </form>
+</section>
+{% endblock content %}
+
+</body>
+</html>

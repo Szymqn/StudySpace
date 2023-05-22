@@ -19,8 +19,9 @@
     <h3>Age: {{ user.age }}</h3>
     <h3>Category: {{ user.category }}</h3>
     <h3>Github: <a href="{{ user.github }}"><img src="{% static 'images/githubIcon.png' %}" alt="githubLink"></a></h3>
+    <h3><a href="{% url 'editAccount' user.id %}" class="custom_button">Edit Account</a></h3>
+    <h3><a href="{% url 'deleteAccount' user.id %}" class="custom_button">Delete Account</a></h3>
 </article>
-
 
 </body>
 </html>
