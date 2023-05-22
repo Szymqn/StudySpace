@@ -17,7 +17,10 @@
         <li>
             Project: {{ project.name }}<br>
             Author: {{ project.author }}<br>
-            Source Code: {{ project.source_code }}<br>
+            Github: <a href="{{ project.source_code }}"><img src="{% static 'images/githubIcon.png' %}" alt="githubLink"></a><br><br>
+            {% if request.user.is_authenticated and request.user == project.author %}
+                    <a href="{% url 'deleteProject' project.id %}" class="custom_button">Delete</a><br><br>
+            {% endif %}
         </li>
     {% endfor %}
 </ol>

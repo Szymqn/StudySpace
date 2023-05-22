@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>StudySpace</title>
+    <link rel="stylesheet" href="/static/styles/style.css"{% now "U" %} />
+</head>
+<body>
+
+{% include 'base/navbar.html' %}
+
+{% block content %}
+<section class="form">
+    <form method="post">
+        {% csrf_token %}
+        <h2>Delete Project</h2>
+        <p>Are you sure that you want to delete "{{ project.name }}"?</p>
+        <p><input type="submit" value="Delete" class="custom_button"></p>
+
+        <section class="custom_button">
+            <a href="{% url 'projects' %}">Cancel</a>
+        </section>
+    </form>
+</section>
+{% endblock content %}
+
+</body>
+</html>

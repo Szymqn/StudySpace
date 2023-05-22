@@ -86,4 +86,13 @@ def create_project(request):
     else:
         form = ProjectForm()
 
-    return render(request, 'base/create_project.html', {'form': form})
+    return render(request, 'base/project_create.html', {'form': form})
+
+
+class ProjectDelete(DeleteView):
+    model = Project
+    context_object_name = 'project'
+    success_url = reverse_lazy('projects')
+
+    def form_valid(self, form):
+        return super(ProjectDelete, self).form_valid(form)
