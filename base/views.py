@@ -1,9 +1,9 @@
-from django.shortcuts import render, redirect, get_object_or_404
+from django.shortcuts import render, redirect, get_object_or_404, HttpResponseRedirect
 from django.urls import reverse_lazy
 from django.contrib.auth import login
 from django.contrib.auth.views import LoginView
 from django.contrib.auth.forms import UserCreationForm
-from django.views.generic.edit import FormView
+from django.views.generic.edit import FormView, DeleteView
 
 from user.models import CustomUser
 from .models import Project, Topic
@@ -51,8 +51,13 @@ def create_topic(request):
     return render(request, 'base/create_topic.html', {'form': form})
 
 
-def addTopic(request):
-    return render(request, 'user/add_topic.html')
+class TopicDelete(DeleteView):
+    model = Topic
+    context_object_name = 'topic'
+    success_url = reverse_lazy('topics')
+
+    def form_valid(self, form):
+        return super(TopicDelete, self).form_valid(form)
 
 
 def create_project(request):

@@ -62,6 +62,17 @@ a {
     right: -200px;
 }
 
+.custom_button {
+    border-style: solid;
+    text-align: center;
+    background-color: #D3ECA7;
+    color: black;
+    padding: 8px;
+    width: 60px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
 /*home*/
 .home_page {
     margin-left: 50px;
