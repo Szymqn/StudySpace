@@ -19,7 +19,8 @@
             Author: {{ project.author }}<br>
             Github: <a href="{{ project.source_code }}"><img src="{% static 'images/githubIcon.png' %}" alt="githubLink"></a><br><br>
             {% if request.user.is_authenticated and request.user == project.author %}
-                    <a href="{% url 'deleteProject' project.id %}" class="custom_button">Delete</a><br><br>
+                <a href="{% url 'deleteProject' project.id %}" class="custom_button">Delete</a>
+                <a href="{% url 'editProject' project.id %}" class="custom_button">Edit</a><br><br>
             {% endif %}
         </li>
     {% endfor %}

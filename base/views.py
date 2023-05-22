@@ -96,3 +96,18 @@ class ProjectDelete(DeleteView):
 
     def form_valid(self, form):
         return super(ProjectDelete, self).form_valid(form)
+
+
+def edit_project(request, id):
+    post = get_object_or_404(Project, id=id)
+
+    if request.method == 'GET':
+        context = {'form': ProjectForm(instance=post), 'id': id}
+        return render(request, 'base/project_edit.html', context)
+    elif request.method == 'POST':
+        form = ProjectForm(request.POST, instance=post)
+        if form.is_valid():
+            form.save()
+            return redirect('projects')
+        else:
+            return render(request, 'base/project_edit.html', {'form': form})
