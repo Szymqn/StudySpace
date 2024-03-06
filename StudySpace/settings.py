@@ -83,19 +83,19 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'StudySpace.wsgi.application'
 
-
-# Database
 DATABASES = {
-    'default': {
-        'ENGINE': 'djongo',
-        'CLIENT': {
-            'host': "mongodb+srv://{}:{}@{}/?retryWrites=true&w=majority".format(
-                os.getenv('MONGODB_USER'), os.getenv('MONGODB_PASSWORD'), os.getenv('MONGODB_CLUSTER')),
-            'name': os.getenv('MONGODB_NAME'),
-            'authMechanism': 'SCRAM-SHA-1'
+        'default': {
+            'ENGINE': 'djongo',
+            'NAME': 'StudySpace',
+            'ENFORCE_SCHEMA': False,
+            'CLIENT': {
+                'host': "mongodb+srv://admin:C~5R}Tk.6ypnfTY@cluster0.f5qfsng.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+            }
         }
-    }
 }
+
+# user: admin
+# password: C~5R}Tk.6ypnfTY
 
 
 # Password validation
